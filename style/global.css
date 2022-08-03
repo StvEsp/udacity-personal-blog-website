@@ -160,8 +160,12 @@ body {
   color: inherit;
 }
 
-.main-content-article-read-more::after {
-  content: "…";
+.main-content-article-read-more-button {
+  border: none;
+  font-size: 1em;
+  padding: 0.25em 1em;
+  background-color: white;
+  cursor: pointer;
 }
 
 .main-content-article-image {
@@ -172,7 +176,16 @@ body {
 }
 
 .main-content-article-image img {
+  width: 100%;
   border-radius: 5px 5px 0 0;
+}
+
+.main-content-article-image-figcaption {
+  text-align: right;
+  margin-top: -2em;
+  color: white;
+  font-size: 0.8em;
+  padding-right: 0.2rem;
 }
 
 /* FOOTER */
@@ -181,6 +194,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0.25rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 50%;
 }
 
 .copyright {
