@@ -1,0 +1,19 @@
+.blog-top-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.top-nav-menu-item {
+  margin-bottom: 1rem;
+  display: block;
+  color: inherit;
+}
+.top-nav-menu-item-icon {
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+.top-nav-label {
+  display: inline-block;
+}

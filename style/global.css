@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Work+Sans:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,600;1,900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("blogpost.css");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Work Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+/* PAGE CONTAINER */
+
+.page-container {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* PAGE GRID */
+
+.grid-header {
+  grid-area: header;
+}
+.grid-nav {
+  grid-area: nav;
+}
+.grid-main {
+  grid-area: main;
+}
+.grid-footer {
+  grid-area: footer;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header header header header header header"
+    "nav main main main main main"
+    "footer footer footer footer footer footer";
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-rows: [header-row] 200px [content-row] min-content [footer-row] 50px;
+  overflow: visible;
+  padding: 0;
+  border-left: 1px #000000 solid;
+  min-height: 100vh;
+}
+
+.header-content,
+.nav-content,
+.main-content,
+.menu-button {
+  padding: 0 1.5rem;
+}
+
+/* HEADER */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-title {
+  display: block;
+  min-width: 40%;
+}
+
+.inspirational-quote {
+  margin-top: 1.75rem;
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.8em;
+  line-height: 1.33em;
+}
+
+/* NAV */
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.nav-menu-item {
+  margin-bottom: 1rem;
+  display: block;
+  color: inherit;
+}
+
+.nav-menu-item-icon {
+  vertical-align: text-bottom;
+  margin-right: 1rem;
+}
+
+.social-icon {
+  height: 24px;
+  width: auto;
+  vertical-align: bottom;
+}
+.menu-button {
+  display: none !important;
+}
+
+/* MAIN */
+.main-content {
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-content-article {
+  border-radius: 5px;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.main-content-article-title,
+.main-content-article-content {
+  padding: 5%;
+}
+
+.main-content-article-title {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 2.5em;
+  line-height: 1.3em !important;
+  padding-bottom: 0.5em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.category-icon {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: -35px;
+  margin-left: -1.75rem;
+}
+
+.main-content-article-publish-date {
+  background-color: #000000;
+  padding: 0.2em 0.5em;
+  color: white;
+}
+
+.main-content-article-read-more {
+  color: inherit;
+}
+
+.main-content-article-read-more::after {
+  content: "…";
+}
+
+.main-content-article-image {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.main-content-article-image img {
+  border-radius: 5px 5px 0 0;
+}
+
+/* FOOTER */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0.25rem 0;
+}
+
+.copyright {
+  font-size: 0.75em;
+}
+
+/* Samsung Galaxy 520 Ultra */
+@media (max-width: 412px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-content {
+    display: none;
+    padding-bottom: 1.5rem;
+  }
+
+  .menu-button {
+    display: block !important;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .blog-title {
+    width: 100%;
+  }
+  .inspirational-quote {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 901px) {
+  .grid {
+    border: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Material Icons Font
+as instructed on https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web */
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: inherit;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
